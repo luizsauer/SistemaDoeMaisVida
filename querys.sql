@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS hemocentros (
     data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE hemocentro_usuario (
+CREATE TABLE IF NOT EXISTS hemocentro_usuario (
     id INT AUTO_INCREMENT PRIMARY KEY,
     hemocentro_id INT NOT NULL,
     usuario_id INT NOT NULL,
@@ -132,19 +132,19 @@ INSERT INTO usuarios (nome, email, senha, tipo, tipo_sanguineo, data_nascimento,
 ('Larissa Alves', 'larissa.a@email.com', SHA2('senha123', 256), 'doador', 'B-', '1994-08-17', '901.901.901-90', '(48) 99012-3456', 'Rua das Pedras, 85', '88105-800', 'Palhoça', 'SC', 170, 2),
 
 -- Hemocentros adicionais (5 registros)
-('Hemocentro Joinville', 'hemo.joinville@email.com', SHA2('senha123', 256), 'hemocentro', '(47) 3333-4444', 'Av. Santos Dumont, 1000 - Centro', NULL, NULL, NULL),
-('Hemocentro Blumenau', 'hemo.blumenau@email.com', SHA2('senha123', 256), 'hemocentro', '(47) 4444-5555', 'Rua XV de Novembro, 500 - Centro', NULL, NULL, NULL),
-('Hemocentro Itajaí', 'hemo.itajai@email.com', SHA2('senha123', 256), 'hemocentro', '(47) 5555-6666', 'Rua Hercílio Luz, 200 - Centro', NULL, NULL, NULL),
-('Hemocentro Criciúma', 'hemo.criciuma@email.com', SHA2('senha123', 256), 'hemocentro', '(48) 6666-7777', 'Av. Centenário, 300 - Centro', NULL, NULL, NULL),
-('Hemocentro Lages', 'hemo.lages@email.com', SHA2('senha123', 256), 'hemocentro', '(49) 7777-8888', 'Rua Benjamin Constant, 150 - Centro', NULL, NULL, NULL);
+('Hemobanco', 'hemo.curitiba@email.com', SHA2('senha123', 256), 'hemocentro', '(41) 3333-4444', 'R. Cap. Souza Franco, 290', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('Hemocentro Blumenau', 'hemo.blumenau@email.com', SHA2('senha123', 256), 'hemocentro', '(47) 4444-5555', 'Rua XV de Novembro, 500 - Centro', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('Hemocentro Itajaí', 'hemo.itajai@email.com', SHA2('senha123', 256), 'hemocentro', '(47) 5555-6666', 'Rua Hercílio Luz, 200 - Centro', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('Hemocentro Criciúma', 'hemo.criciuma@email.com', SHA2('senha123', 256), 'hemocentro', '(48) 6666-7777', 'Av. Centenário, 300 - Centro', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('Hemocentro Lages', 'hemo.lages@email.com', SHA2('senha123', 256), 'hemocentro', '(49) 7777-8888', 'Rua Benjamin Constant, 150 - Centro', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- Inserções adicionais de hemocentros
 INSERT INTO hemocentros (nome, endereco, telefone, latitude, longitude, horario_funcionamento, email, cnpj) VALUES
-('Hemocentro Joinville', 'Av. Santos Dumont, 1000 - Centro', '(47) 3333-4444', -26.3044, -48.8467, 'Seg-Sab: 7h-19h', 'hemo.joinville@email.com', '12.345.678/0001-01'),
-('Hemocentro Blumenau', 'Rua XV de Novembro, 500 - Centro', '(47) 4444-5555', -26.9186, -49.0661, 'Ter-Dom: 8h-20h', 'hemo.blumenau@email.com', '23.456.789/0001-02'),
-('Hemocentro Itajaí', 'Rua Hercílio Luz, 200 - Centro', '(47) 5555-6666', -26.9025, -48.6613, 'Qua-Seg: 9h-18h', 'hemo.itajai@email.com', '34.567.890/0001-03'),
-('Hemocentro Criciúma', 'Av. Centenário, 300 - Centro', '(48) 6666-7777', -28.6776, -49.3697, 'Seg-Sex: 7h-17h', 'hemo.criciuma@email.com', '45.678.901/0001-04'),
-('Hemocentro Lages', 'Rua Benjamin Constant, 150 - Centro', '(49) 7777-8888', -27.8159, -50.3262, 'Seg-Sab: 8h-18h', 'hemo.lages@email.com', '56.789.012/0001-05');
+('Hemobanco', 'R. Cap. Souza Franco, 290', '(41) 3333-4444', 'hemo.curitiba@email.com', -25.434370628868148, -49.2903801847666, 'Seg-Sab: 7h-19h', 'João da Silva', '12.345.678/0001-01'),
+('Hemocentro Blumenau', 'Rua XV de Novembro, 500 - Centro', '(47) 4444-5555', 'hemo.blumenau@email.com', -26.9186, -49.0661, 'Ter-Dom: 8h-20h', 'Maria Oliveira', '23.456.789/0001-02'),
+('Hemocentro Itajaí', 'Rua Hercílio Luz, 200 - Centro', '(47) 5555-6666', 'hemo.itajai@email.com', -26.9025, -48.6613, 'Qua-Seg: 9h-18h', 'Carlos Souza', '34.567.890/0001-03'),
+('Hemocentro Criciúma', 'Av. Centenário, 300 - Centro', '(48) 6666-7777', 'hemo.criciuma@email.com', -28.6776, -49.3697, 'Seg-Sex: 7h-17h', 'Ana Pereira', '45.678.901/0001-04'),
+('Hemocentro Lages', 'Rua Benjamin Constant, 150 - Centro', '(49) 7777-8888', 'hemo.lages@email.com', -27.8159, -50.3262, 'Seg-Sab: 8h-18h', 'Pedro Costa', '56.789.012/0001-05');
 
 -- Relacionamentos hemocentro_usuario
 INSERT INTO hemocentro_usuario (hemocentro_id, usuario_id) VALUES
@@ -152,12 +152,11 @@ INSERT INTO hemocentro_usuario (hemocentro_id, usuario_id) VALUES
 (1, 2),
 
 -- Outros relacionamentos
-(2, (SELECT id FROM usuarios WHERE email = 'admin.hemopalhoca@email.com')),
-(3, (SELECT id FROM usuarios WHERE email = 'hemo.joinville@email.com')),
-(4, (SELECT id FROM usuarios WHERE email = 'hemo.blumenau@email.com')),
-(5, (SELECT id FROM usuarios WHERE email = 'hemo.itajai@email.com')),
-(6, (SELECT id FROM usuarios WHERE email = 'hemo.criciuma@email.com')),
-(7, (SELECT id FROM usuarios WHERE email = 'hemo.lages@email.com'));
+(1, (SELECT id FROM usuarios WHERE email = 'hemo.curitiba@email.com')),
+(2, (SELECT id FROM usuarios WHERE email = 'hemo.blumenau@email.com')),
+(3, (SELECT id FROM usuarios WHERE email = 'hemo.itajai@email.com')),
+(4, (SELECT id FROM usuarios WHERE email = 'hemo.criciuma@email.com')),
+(5, (SELECT id FROM usuarios WHERE email = 'hemo.lages@email.com'));
 
 -- Agendamentos adicionais (50 registros)
 INSERT INTO agendamentos (usuario_id, hemocentro_id, data_agendamento, horario, status, observacoes) VALUES
@@ -169,6 +168,18 @@ INSERT INTO agendamentos (usuario_id, hemocentro_id, data_agendamento, horario, 
 (1, 1, '2024-05-20', '11:00:00', 'Agendado', 'Próxima doação'),
 (1, 3, '2023-10-12', '08:30:00', 'Concluído', NULL),
 (1, 1, '2024-02-18', '15:00:00', 'Cancelado', 'Remarcado para março'),
+(1, 1, DATE_SUB(CURDATE(), INTERVAL 2 MONTH), '10:00:00', 'Concluído', 'Primeira doação'),
+(1, 1, DATE_SUB(CURDATE(), INTERVAL 1 MONTH), '09:00:00', 'Concluído', 'Segunda doação'),
+(1, 1, DATE_SUB(CURDATE(), INTERVAL 2 WEEK), '10:30:00', 'Concluído', 'Terceira doação'),
+(1, 2, DATE_SUB(CURDATE(), INTERVAL 1 WEEK), '14:00:00', 'Concluído', 'Doação em hemocentro diferente'),
+(1, 3, DATE_SUB(CURDATE(), INTERVAL 3 DAY), '08:30:00', 'Concluído', NULL),
+(1, 1, DATE_SUB(CURDATE(), INTERVAL 1 DAY), '15:00:00', 'Cancelado', 'Remarcado'),
+
+(1, 1, DATE_ADD(CURDATE(), INTERVAL 1 WEEK), '11:00:00', 'Agendado', 'Próxima doação'),
+(1, 2, DATE_ADD(CURDATE(), INTERVAL 2 WEEK), '14:30:00', 'Agendado', NULL),
+(1, 3, DATE_ADD(CURDATE(), INTERVAL 3 WEEK), '09:15:00', 'Agendado', NULL),
+(1, 1, DATE_ADD(CURDATE(), INTERVAL 1 MONTH), '10:00:00', 'Agendado', NULL),
+(1, 2, DATE_ADD(CURDATE(), INTERVAL 6 WEEK), '13:45:00', 'Agendado', NULL),
 
 -- Agendamentos para outros usuários (43 registros)
 (3, 1, '2023-09-05', '09:30:00', 'Concluído', NULL),
@@ -215,6 +226,14 @@ INSERT INTO agendamentos (usuario_id, hemocentro_id, data_agendamento, horario, 
 (8, 3, '2024-06-17', '08:00:00', 'Agendado', NULL),
 (9, 1, '2024-06-24', '13:00:00', 'Agendado', NULL),
 (10, 2, '2024-07-01', '09:30:00', 'Agendado', NULL);
+(3, 1, CURDATE(), '09:30:00', 'Agendado', NULL),
+(4, 2, DATE_ADD(CURDATE(), INTERVAL 1 DAY), '14:00:00', 'Agendado', NULL),
+(5, 3, DATE_ADD(CURDATE(), INTERVAL 2 DAY), '10:00:00', 'Agendado', 'Primeira doação'),
+(6, 1, DATE_ADD(CURDATE(), INTERVAL 3 DAY), '11:30:00', 'Agendado', NULL),
+(7, 2, DATE_ADD(CURDATE(), INTERVAL 4 DAY), '08:00:00', 'Agendado', NULL),
+(8, 3, DATE_ADD(CURDATE(), INTERVAL 5 DAY), '13:00:00', 'Agendado', NULL),
+(9, 1, DATE_ADD(CURDATE(), INTERVAL 6 DAY), '16:00:00', 'Agendado', NULL),
+(10, 2, DATE_ADD(CURDATE(), INTERVAL 1 WEEK), '09:30:00', 'Agendado', NULL);
 
 -- Campanhas adicionais (15 registros)
 INSERT INTO campanhas (hemocentro_id, titulo, mensagem, urgencia, data_inicio, data_fim, ativa) VALUES
@@ -234,17 +253,29 @@ INSERT INTO campanhas (hemocentro_id, titulo, mensagem, urgencia, data_inicio, d
 (4, 'Dia dos Pais', 'Seja um herói como seu pai', 'Média', '2024-08-01', '2024-08-11', TRUE),
 (5, 'Natal Solidário', 'O melhor presente é salvar vidas', 'Alta', '2024-12-01', '2024-12-25', TRUE);
 
+(1, 'Campanha Atual', 'Estamos precisando de doadores este mês!', 'Alta', CURDATE(), DATE_ADD(CURDATE(), INTERVAL 2 WEEK), TRUE),
+(2, 'Doe no Verão', 'O verão é quando mais precisamos de doações', 'Média', CURDATE(), DATE_ADD(CURDATE(), INTERVAL 1 MONTH), TRUE),
+(3, 'Tipo O- Urgente', 'Estoque crítico de sangue O negativo', 'Alta', CURDATE(), DATE_ADD(CURDATE(), INTERVAL 1 WEEK), TRUE),
+(4, 'Maratona de Doação', 'Ajudem-nos a bater o recorde de doações!', 'Média', CURDATE(), DATE_ADD(CURDATE(), INTERVAL 3 DAY), TRUE),
+(5, 'Doe e Salve Vidas', 'Sua doação faz a diferença', 'Baixa', CURDATE(), DATE_ADD(CURDATE(), INTERVAL 2 MONTH), TRUE),
+(1, 'Dia do Doador', 'Evento especial no dia do doador', 'Média', DATE_ADD(CURDATE(), INTERVAL 1 WEEK), DATE_ADD(CURDATE(), INTERVAL 2 WEEK), TRUE),
+(2, 'Fim de Semana Solidário', 'Doe no fim de semana e ganhe um brinde', 'Baixa', DATE_ADD(CURDATE(), INTERVAL 2 WEEK), DATE_ADD(CURDATE(), INTERVAL 3 WEEK), TRUE),
+(1, 'Campanha de Inverno', 'O inverno é quando mais precisamos', 'Alta', DATE_SUB(CURDATE(), INTERVAL 2 MONTH), DATE_SUB(CURDATE(), INTERVAL 1 MONTH), FALSE),
+(2, 'Volta às Aulas', 'Comece o semestre fazendo o bem', 'Média', DATE_SUB(CURDATE(), INTERVAL 1 MONTH), DATE_SUB(CURDATE(), INTERVAL 2 WEEK), FALSE),
+(3, 'Páscoa Solidária', 'Doe sangue nessa páscoa', 'Baixa', DATE_SUB(CURDATE(), INTERVAL 3 MONTH), DATE_SUB(CURDATE(), INTERVAL 2 MONTH), FALSE);
+
+
 -- Estoque de sangue adicional
 INSERT INTO estoque_sangue (hemocentro_id, tipo_sanguineo, quantidade) VALUES
 -- Hemocentro Joinville
-(3, 'A+', 18),
-(3, 'A-', 6),
-(3, 'B+', 12),
-(3, 'B-', 4),
-(3, 'AB+', 9),
-(3, 'AB-', 3),
-(3, 'O+', 24),
-(3, 'O-', 5),
+(1, 'A+', 18),
+(1, 'A-', 6),
+(1, 'B+', 12),
+(1, 'B-', 4),
+(1, 'AB+', 9),
+(1, 'AB-', 3),
+(1, 'O+', 24),
+(1, 'O-', 5),
 
 -- Hemocentro Blumenau
 (4, 'A+', 15),
@@ -277,14 +308,23 @@ INSERT INTO estoque_sangue (hemocentro_id, tipo_sanguineo, quantidade) VALUES
 (6, 'O-', 3),
 
 -- Hemocentro Lages
-(7, 'A+', 8),
-(7, 'A-', 2),
-(7, 'B+', 6),
-(7, 'B-', 1),
-(7, 'AB+', 4),
-(7, 'AB-', 1),
-(7, 'O+', 12),
-(7, 'O-', 2);
+(5, 'A+', 12),
+(5, 'A-', 4),
+(5, 'B+', 8),
+(5, 'B-', 2),
+(5, 'AB+', 6),
+(5, 'AB-', 1),
+(5, 'O+', 18),
+(5, 'O-', 3)) alias;
+
+-- Conquistas adicionadas
+INSERT INTO conquistas (id, nome, descricao, pontos, icone, requisito) VALUES
+(1, 'Primeira Doação', 'Realizou sua primeira doação de sangue', 50, '🥇', '1 doação'),
+(2, 'Doador Frequente', 'Realizou 3 doações de sangue', 150, '🏆', '3 doações'),
+(3, 'Herói do Sangue', 'Realizou 10 doações de sangue', 500, '🦸', '10 doações'),
+(4, 'Doador de Feriado', 'Doou sangue em um feriado', 100, '🎉', 'Doação em feriado'),
+(5, 'Tipo Raro', 'Possui tipo sanguíneo raro (AB-, B-, A-, O-)', 75, '💎', 'Tipo sanguíneo raro');
+
 
 -- Conquistas adicionais para usuários
 INSERT INTO usuario_conquistas (usuario_id, conquista_id, data_conquista) VALUES
