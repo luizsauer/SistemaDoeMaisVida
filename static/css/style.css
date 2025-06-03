@@ -1,0 +1,167 @@
+/* Estilos gerais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+/* Container principal - ajuste para margens maiores */
+.st-emotion-cache-1ibsh2c, .main .block-container {
+    padding: 3rem 8rem !important;
+    max-width: 1800px !important;
+    margin: 0 auto !important;
+}
+
+/* Para o conteúdo dentro do container */
+.st-emotion-cache-1y4p8pa {
+    padding: 2rem 4rem !important;
+}
+
+/* Ajuste específico para a página inicial */
+.pagina-inicio .stContainer {
+    padding: 2rem 6rem !important;
+}
+
+/* Ajuste para telas menores (responsividade) */
+@media screen and (max-width: 1200px) {
+    .st-emotion-cache-1ibsh2c, .main .block-container {
+        padding: 2rem 4rem !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .st-emotion-cache-1ibsh2c, .main .block-container {
+        padding: 1.5rem 2rem !important;
+    }
+}
+
+.user-info {
+    color: rgb(202, 20, 20);
+    margin-bottom: 20px;
+}
+
+.level-box, .points-box {
+    background-color: rgba(122, 122, 122, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: rgb(199, 21, 21);
+}
+
+.menu-container button {
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f8d7da;
+    color: white;
+    border: none;
+    text-align: left;
+}
+
+.menu-container button:hover {
+    background-color: #c40707;
+}
+
+/* Cards e containers */
+.welcome-box {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.campaign-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.campaign-box.urgent {
+    border-left: 5px solid #ff4b4b;
+}
+
+.appointment-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.status {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.status.agendado {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status.concluído {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+/* Botões */
+.stTextInput>div>div>input, .stPassword>div>div>input {
+    background-color: #f8f9fa !important;
+    border: 1px solid #ced4da;
+    color: #495057;
+}
+
+/* Botões mais claros e consistentes */
+.stButton>button {
+    background-color: #dc3545 !important;
+    color: white !important;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    transition: all 0.3s ease;
+}
+
+.stButton>button:hover {
+    background-color: #c82333 !important;
+    color: white !important;
+}
+
+
+/* Abas do login/cadastro */
+.stTab {
+    background-color: transparent !important;
+}
+
+.stTab>button {
+    color: #6c757d !important;
+    font-weight: normal;
+}
+
+.stTab>button[aria-selected="true"] {
+    color: #dc3545 !important;
+    font-weight: bold;
+}
+
+
+/* Títulos */
+h1, h2, h3, h4 {
+    color: #8a0303;
+}
+
+.highlight {
+    color: #8a0303;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#MainMenu { visibility: hidden; }
+footer { visibility: hidden; }
+header { visibility: hidden; }
