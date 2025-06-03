@@ -10,11 +10,10 @@ def get_db_connection(max_retries=3, retry_delay=2):
     for attempt in range(max_retries):
         try:
             conn = mysql.connector.connect(    
-                host=st.secrets["mysql"]["host"],
-                user=st.secrets["mysql"]["user"],
-                password=st.secrets["mysql"]["password"],
-                database=st.secrets["mysql"]["database"]
-
+            host=st.secrets["DB_HOST"],
+            user=st.secrets["DB_USER"],
+            password=st.secrets["DB_PASSWORD"],
+            database=st.secrets["DB_NAME"]
             )
             return conn
         except mysql.connector.Error as err:
